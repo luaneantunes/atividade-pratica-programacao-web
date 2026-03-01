@@ -1,0 +1,230 @@
+/* ============================================
+   VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ============================================ */
+:root {
+    /* Cores */
+    --primary-blue: #0066ff;
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --bg-light: #f5f5f5;
+    --white: #ffffff;
+
+    /* Tipografia */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-size-base: 16px;
+    --font-size-large: 18px;
+    --font-size-title: 48px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Espaçamentos */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-2xl: 64px;
+
+    /* Outros */
+    --line-height: 1.6;
+    --max-container-width: 1000px;
+}
+
+/* ============================================
+   RESET E ESTILOS GERAIS
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+.container {
+    max-width: var(--max-container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    width: 100%;
+    background: linear-gradient(135deg, #e8f4f8 0%, #f0f8fc 100%);
+    padding: var(--spacing-xl) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
+    width: 100%;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.title {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.highlight {
+    color: var(--primary-blue);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================
+   DESCRIPTION SECTION
+   ============================================ */
+.description {
+    padding: var(--spacing-lg) 0 var(--spacing-2xl);
+    text-align: center;
+}
+
+.description p {
+    font-size: var(--font-size-large);
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+.description strong {
+    color: var(--text-dark);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================
+   CALL TO ACTION SECTION
+   ============================================ */
+.cta {
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
+    transition: all 0.3s ease;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 4px;
+}
+
+.social-links a:hover {
+    color: var(--white);
+    background-color: var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    width: 100%;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--bg-light);
+    text-align: center;
+    color: var(--text-gray);
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 768px) {
+    :root {
+        --font-size-title: 36px;
+        --spacing-2xl: 40px;
+    }
+
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .description {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .description p {
+        font-size: var(--font-size-base);
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .social-links a {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-title: 28px;
+        --spacing-md: 16px;
+        --spacing-lg: 24px;
+        --spacing-xl: 32px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .title {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .header {
+        padding: var(--spacing-lg) 0;
+    }
+}
